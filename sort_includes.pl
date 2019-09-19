@@ -37,11 +37,11 @@ sub read_args
 		# (.) : 1st captured any character except '\n', exactly once
 		# \1 : repetition of 1st captured group
 		# (?!.*(.).*\1.*) : must not match any sequence of non-'\n' characters where one is repeated
-		# [ivr]+ : either of the characters in the set at least once
+		# [irv]+ : either of the characters in the set at least once
 		# $ : end of line
-		# In summary: all combinations of characters from the set [vr] (without repetition)
-		# It would be easier not to enforce non-repetition (^-[vr]+$) but what's the fun?
-		if ($arg =~ /^-(?!.*(.).*\1.*)[ivr]+$/)
+		# In summary: all combinations of characters from the set [irv] (without repetition)
+		# It would be easier not to enforce non-repetition (^-[irv]+$) but what's the fun?
+		if ($arg =~ /^-(?!.*(.).*\1.*)[irv]+$/)
 		{
 			if ($arg =~ /i/)
 			{
