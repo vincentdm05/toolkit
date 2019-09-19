@@ -107,8 +107,7 @@ sub find_files
 sub match_file
 {
 	my ($file) = @_;
-	# Note: A character is causing trouble with syntax highlighting, hence the end-of-line comment
-	-f $file && $file =~ /^[^\\\/:*?"<>|]+\.[ch](pp)?$/;	#"
+	-f $file && $file =~ /^.*\S.*\.[ch](pp)?$/;
 }
 
 # Handle files found with find()
