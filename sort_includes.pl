@@ -178,7 +178,7 @@ sub sort_ignore_leading_whitespace
 	{
 		my $index = $_;
 		my $value = $list[$index];
-		[$index, $value, $value =~ /\#include\s+[<"]([^>"])+[>"]/]
+		[$index, $value, $value =~ /\#include\s+[<"]([^>"]+)[>"]/]
 	} 0 .. $#list;
 	push @sorted, $changed;
 	return @sorted;
